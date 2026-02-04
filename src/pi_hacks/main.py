@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-from device.device_registry.input_device_registry import DeviceRegistry
+from device.device_registry.input_device_registry import InputDeviceRegistry
 
 """
 TODO:
@@ -14,8 +14,8 @@ Tests
 import asyncio
 
 async def main():
-    deviceRegistry = DeviceRegistry()
-    for device in deviceRegistry.get_devices():
+    device_registry = InputDeviceRegistry()
+    for device in device_registry.get_input_devices():
         device.open_listener()
     await asyncio.Event().wait()
 
